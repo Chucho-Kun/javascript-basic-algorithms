@@ -46,8 +46,40 @@ function gradingStudents(grades) {
 let grades = [73, 67, 38, 33, 0]
 gradingStudents(grades);
 ```
+## compareTriplets
 
+__Sample Input__
+```
+5 6 7
+3 6 10
+```
+__Sample Output__
+```
+1 1 
+```
 
+```
+function compareTriplets(a, b) {
+    const tabla = a.map((x,y)=>[x,b[y]])
+    
+    const alice = []
+    const bob = []
+    
+    const review = tabla.forEach((a,b)=>{
+        if(a[0] > a[1]){
+            alice.push(1)
+        }else if( a[0] < a[1] ){
+            bob.push(1)
+        }
+    })
+    const aSum = alice.reduce((a,b)=>a+b,0);
+    const bSum = bob.reduce((a,b)=>a+b,0);
+    const resp = [aSum,bSum];
+    
+    return resp;
+}
+
+```
 
 
 
